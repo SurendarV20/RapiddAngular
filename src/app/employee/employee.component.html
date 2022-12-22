@@ -1,1 +1,14 @@
-<p>employee works!</p>
+<table cellspacing="0" class="borderClass">
+  <thead class="borderClass">
+    <tr class="header">
+      <th class="borderClass">Employee Name</th>
+      <th class="borderClass" >Total Time Worked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="borderClass" *ngFor="let employee of employees" [ngClass]="employee.TimeWorked < 100 ? 'lessHrClass' :''">
+      <td class="borderClass">{{ employee.EmployeeName }}</td>
+      <td class="borderClass">{{ employee.TimeWorked |timeTransform}}</td>
+    </tr>
+  </tbody>
+</table>
