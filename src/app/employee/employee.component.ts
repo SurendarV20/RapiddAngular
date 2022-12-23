@@ -33,7 +33,7 @@ export class EmployeeComponent implements OnInit {
         (s.TimeWorked =
           (new Date(s.EndTimeUtc).getTime() -
             new Date(s.StarTimeUtc).getTime()) /
-            3600000)
+          (1000 * 60 * 60))
     );
     let emp = [
       ...employees.reduce((map, item) => {
